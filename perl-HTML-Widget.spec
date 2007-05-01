@@ -2,10 +2,8 @@
 %define name	perl-%{module}
 %define	modprefix HTML
 
-%define version	1.08
-
-%define	rel	1
-%define release	%mkrel %{rel}
+%define version	1.11
+%define release	%mkrel 1
 
 Name:		%{name}
 Version:	%{version}
@@ -23,7 +21,7 @@ BuildRequires:	perl(Class::Accessor::Fast)
 BuildRequires:	perl(Class::Data::Accessor)
 BuildRequires:	perl(Date::Calc)
 BuildRequires:	perl(Email::Valid)
-BuildRequires:	perl(HTML::Element)
+BuildRequires:	perl(HTML::Element) >= 3.22
 BuildRequires:	perl(HTML::Scrubber)
 BuildRequires:	perl(Module::Pluggable::Fast)
 BuildRequires:	perl(Scalar::Util)
