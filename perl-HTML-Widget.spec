@@ -29,6 +29,7 @@ BuildRequires:	perl(Storable)
 BuildRequires:	perl(Test::NoWarnings)
 Requires:	perl >= 5.8.1
 BuildArch:	noarch
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Create easy to maintain HTML widgets!
