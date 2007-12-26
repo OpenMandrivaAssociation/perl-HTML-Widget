@@ -3,7 +3,7 @@
 %define	modprefix HTML
 
 %define version	1.11
-%define release	%mkrel 1
+%define release	%mkrel 2
 
 Name:		%{name}
 Version:	%{version}
@@ -27,7 +27,7 @@ BuildRequires:	perl(Module::Pluggable::Fast)
 BuildRequires:	perl(Scalar::Util)
 BuildRequires:	perl(Storable)
 BuildRequires:	perl(Test::NoWarnings)
-Requires:	perl >= 5.8.1
+Requires:	perl(Module::Pluggable::Fast)
 BuildArch:	noarch
 Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
