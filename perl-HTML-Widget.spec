@@ -3,7 +3,7 @@
 %define	modprefix HTML
 
 %define version	1.11
-%define release	%mkrel 2
+%define release	%mkrel 3
 
 Name:		%{name}
 Version:	%{version}
@@ -28,8 +28,9 @@ BuildRequires:	perl(Scalar::Util)
 BuildRequires:	perl(Storable)
 BuildRequires:	perl(Test::NoWarnings)
 Requires:	perl(Module::Pluggable::Fast)
+Requires:	perl(Class::Accessor::Chained::Fast)
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Buildroot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Create easy to maintain HTML widgets!
