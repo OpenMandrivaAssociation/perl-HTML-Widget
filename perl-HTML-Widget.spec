@@ -1,18 +1,16 @@
-%define module	HTML-Widget
-%define name	perl-%{module}
-%define	modprefix HTML
+%define upstream_name	 HTML-Widget
+%define upstream_version 1.11
 
-%define version	1.11
-%define release	%mkrel 5
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
 Summary:	HTML Widget And Validation Framework
 License:	Artistic/GPL
 Group:		Development/Perl
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{modprefix}/%{module}-%{version}.tar.bz2
-URL:		http://search.cpan.org/dist/%{module}/
+Url:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/HTML/%{upstream_name}-%{upstream_version}.tar.bz2
+
 %if %{mdkversion} < 1010
 Buildrequires:	perl-devel >= 5.8.1
 %endif
@@ -27,16 +25,16 @@ BuildRequires:	perl(Module::Pluggable::Fast)
 BuildRequires:	perl(Scalar::Util)
 BuildRequires:	perl(Storable)
 BuildRequires:	perl(Test::NoWarnings)
+BuildArch:	noarch
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 Requires:	perl(Module::Pluggable::Fast)
 Requires:	perl(Class::Accessor::Chained::Fast)
-BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Create easy to maintain HTML widgets!
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -56,7 +54,4 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc README Changes
 %{_mandir}/*/*
-%{perl_vendorlib}/%{modprefix}
-
-
-
+%{perl_vendorlib}/HTML
